@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FPT_Telecom\\sudoku\\SudokuSolver\\SudokuSolver\\SudokuSolver.csproj": {}
+    "d:\\FPT_Telecom\\sudoku\\SudokuSolver\\SudokuSolver\\SudokuSolver.csproj": {}
   },
   "projects": {
-    "D:\\FPT_Telecom\\sudoku\\SudokuSolver\\SudokuSolver\\SudokuSolver.csproj": {
+    "d:\\FPT_Telecom\\sudoku\\SudokuSolver\\SudokuSolver\\SudokuSolver.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPT_Telecom\\sudoku\\SudokuSolver\\SudokuSolver\\SudokuSolver.csproj",
+        "projectUniqueName": "d:\\FPT_Telecom\\sudoku\\SudokuSolver\\SudokuSolver\\SudokuSolver.csproj",
         "projectName": "SudokuSolver",
-        "projectPath": "D:\\FPT_Telecom\\sudoku\\SudokuSolver\\SudokuSolver\\SudokuSolver.csproj",
+        "projectPath": "d:\\FPT_Telecom\\sudoku\\SudokuSolver\\SudokuSolver\\SudokuSolver.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "D:\\FPT_Telecom\\sudoku\\SudokuSolver\\SudokuSolver\\obj\\",
+        "outputPath": "d:\\FPT_Telecom\\sudoku\\SudokuSolver\\SudokuSolver\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
