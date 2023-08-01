@@ -134,6 +134,7 @@ namespace SudokuSolver
            // var data = inputLoader.Load("data.txt");
             var sudoku = sudokuParser.Parser(datasample);
             var result = sudokuSolver.Solve(sudoku);
+            sudokuPrinter.Print(sudoku);
             sudokuPrinter.Print(result);
 
             // Bảng Sudoku được biểu diễn bằng một mảng 2D
