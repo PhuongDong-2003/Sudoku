@@ -120,9 +120,20 @@ namespace SudokuSolver
                 "0 0 0 4 1 9 0 0 5",
                 "0 0 0 0 8 0 0 7 9",
             };
-        static void Main()
+        public static void Main(string[] args)
         {
-
+            //Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(args));
+                    if (args.Length > 0)
+        {
+            for (int i = 0; i < args.Length; i++)
+            {
+                if (args[i] == "-i" && i + 1 < args.Length)
+                {
+                    string inputFile = args[i + 1];
+                    Console.WriteLine("Input file:  " + inputFile);
+                }
+            }
+        }
            // Sudoku sudoku1 = new Sudoku(Program.board);
 
             InputLoader inputLoader = new InputLoader();
