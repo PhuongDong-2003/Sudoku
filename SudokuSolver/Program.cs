@@ -122,19 +122,33 @@ namespace SudokuSolver
             };
         public static void Main(string[] args)
         {
+            bool hasInputFile = false;
+            string inputFile = "";
             //Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(args));
-                    if (args.Length > 0)
-        {
-            for (int i = 0; i < args.Length; i++)
-            {
-                if (args[i] == "-i" && i + 1 < args.Length)
+            
+            
+                for (int i = 0; i < args.Length; i++)
                 {
-                    string inputFile = args[i + 1];
-                    Console.WriteLine("Input file:  " + inputFile);
+                    if (args[i] == "-i" && i + 1 < args.Length)
+                    {
+                        hasInputFile =true;
+                        inputFile = args[i + 1];
+                        break;
+                    }
                 }
-            }
-        }
-           // Sudoku sudoku1 = new Sudoku(Program.board);
+
+                if (hasInputFile)
+                {
+                    Console.WriteLine("Input file: " + inputFile);
+                }
+                else
+                {
+                    Console.WriteLine("Error: Missing input file parameter (-i).");
+                }
+        
+
+
+            // Sudoku sudoku1 = new Sudoku(Program.board);
 
             InputLoader inputLoader = new InputLoader();
 
@@ -142,10 +156,10 @@ namespace SudokuSolver
 
             SudokuPrinter sudokuPrinter = new SudokuPrinter();
             SudokuSolver sudokuSolver = new SudokuSolver();
-           var data = inputLoader.Load("Sudoku.txt");
+            var data = inputLoader.Load("Sudoku.txt");
             var sudoku = sudokuParser.Parser(data);
             var result = sudokuSolver.Solve(sudoku);
-          //  sudokuPrinter.Print(sudoku);
+            //  sudokuPrinter.Print(sudoku);
             sudokuPrinter.Print(result);
 
             // Bảng Sudoku được biểu diễn bằng một mảng 2D
