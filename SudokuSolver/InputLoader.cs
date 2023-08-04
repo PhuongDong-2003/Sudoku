@@ -8,8 +8,9 @@ namespace SudokuSolver
     public class InputLoader
     {
         internal string[] Load(string v)
-        {
-            throw new NotImplementedException();
+        {          
+           return File.ReadAllLines(v);
+            
         }
     }
 }

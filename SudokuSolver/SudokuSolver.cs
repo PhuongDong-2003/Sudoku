@@ -3,7 +3,7 @@ namespace SudokuSolver
     public class SudokuSolver
     {
 
-        public int[,] copyArray;
+      
         static bool IsSafe(int[,] board, int row, int col, int num)
         {
             // Kiểm tra xem số num có hợp lệ để điền vào vị trí (row, col) hay không

@@ -125,16 +125,16 @@ namespace SudokuSolver
 
            // Sudoku sudoku1 = new Sudoku(Program.board);
 
-           // InputLoader inputLoader = new InputLoader();
+            InputLoader inputLoader = new InputLoader();
 
             SudokuParser sudokuParser = new SudokuParser();
 
             SudokuPrinter sudokuPrinter = new SudokuPrinter();
             SudokuSolver sudokuSolver = new SudokuSolver();
-           // var data = inputLoader.Load("data.txt");
-            var sudoku = sudokuParser.Parser(datasample);
+           var data = inputLoader.Load("Sudoku.txt");
+            var sudoku = sudokuParser.Parser(data);
             var result = sudokuSolver.Solve(sudoku);
-            sudokuPrinter.Print(sudoku);
+          //  sudokuPrinter.Print(sudoku);
             sudokuPrinter.Print(result);
 
             // Bảng Sudoku được biểu diễn bằng một mảng 2D
