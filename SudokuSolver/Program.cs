@@ -6,7 +6,77 @@ namespace SudokuSolver
     class Program
     {
 
-        // static bool IsSafe(int[,] board, int row, int col, int num)
+        public static string[] datasample = new string[] {
+                "5 3 0 0 7 0 0 0 0",
+                "6 0 0 1 9 5 0 0 0",
+                "0 9 8 0 0 0 0 6 0",
+                "8 0 0 0 6 0 0 0 3",
+                "4 0 0 8 0 3 0 0 1",
+                "7 0 0 0 2 0 0 0 6",
+                "0 6 0 0 0 0 2 8 0",
+                "0 0 0 4 1 9 0 0 5",
+                "0 0 0 0 8 0 0 7 9",
+            };
+        public static void Main(string[] args)
+        {
+
+            
+            InputLoader inputLoader = new InputLoader();
+            SudokuParser sudokuParser = new SudokuParser();
+            SudokuPrinter sudokuPrinter = new SudokuPrinter();
+            SudokuSolver sudokuSolver = new SudokuSolver();
+
+            //Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(args));
+
+
+            bool hasInputFile = false;
+            string inputFile = "";
+
+            for (int i = 0; i < args.Length; i++)
+            {
+                if (args[i] == "-i" && i + 1 < args.Length)
+                {
+                    hasInputFile = true;
+                    inputFile = args[i + 1];
+                    break;
+                }
+            }
+
+            if (hasInputFile && File.Exists(inputFile))
+            {
+
+
+                var data = inputLoader.Load("Sudoku.txt");
+                var sudoku = sudokuParser.Parser(data);
+                var result = sudokuSolver.Solve(sudoku);
+                Console.WriteLine("Input file: " + inputFile);
+
+            }
+            else
+            {
+                Console.WriteLine( "Input file not found or missing input file parameter (-i).");
+            }
+
+
+
+
+
+
+
+            // Sudoku sudoku1 = new Sudoku(Program.board)
+            // Bảng Sudoku được biểu diễn bằng một mảng 2D
+            // 0 đại diện cho ô trống
+
+            // if (SolveSudoku(board))
+            // {
+            //     // In bảng Sudoku đã giải
+            //     PrintBoard(board);
+            // }
+            // else
+            // {
+            //     Console.WriteLine("Không có lời giải cho bài đố Sudoku này");
+            // }
+             // static bool IsSafe(int[,] board, int row, int col, int num)
         // {
         //     // Kiểm tra xem số num có hợp lệ để điền vào vị trí (row, col) hay không
 
@@ -108,72 +178,6 @@ namespace SudokuSolver
         //     {0, 0, 0, 4, 1, 9, 0, 0, 5},
         //     {0, 0, 0, 0, 8, 0, 0, 7, 9}
         //             };
-
-        public static string[] datasample = new string[] {
-                "5 3 0 0 7 0 0 0 0",
-                "6 0 0 1 9 5 0 0 0",
-                "0 9 8 0 0 0 0 6 0",
-                "8 0 0 0 6 0 0 0 3",
-                "4 0 0 8 0 3 0 0 1",
-                "7 0 0 0 2 0 0 0 6",
-                "0 6 0 0 0 0 2 8 0",
-                "0 0 0 4 1 9 0 0 5",
-                "0 0 0 0 8 0 0 7 9",
-            };
-        public static void Main(string[] args)
-        {
-            bool hasInputFile = false;
-            string inputFile = "";
-            //Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(args));
-            
-            
-                for (int i = 0; i < args.Length; i++)
-                {
-                    if (args[i] == "-i" && i + 1 < args.Length)
-                    {
-                        hasInputFile =true;
-                        inputFile = args[i + 1];
-                        break;
-                    }
-                }
-
-                if (hasInputFile)
-                {
-                    Console.WriteLine("Input file: " + inputFile);
-                }
-                else
-                {
-                    Console.WriteLine("Error: Missing input file parameter (-i).");
-                }
-        
-
-
-            // Sudoku sudoku1 = new Sudoku(Program.board);
-
-            InputLoader inputLoader = new InputLoader();
-
-            SudokuParser sudokuParser = new SudokuParser();
-
-            SudokuPrinter sudokuPrinter = new SudokuPrinter();
-            SudokuSolver sudokuSolver = new SudokuSolver();
-            var data = inputLoader.Load("Sudoku.txt");
-            var sudoku = sudokuParser.Parser(data);
-            var result = sudokuSolver.Solve(sudoku);
-            //  sudokuPrinter.Print(sudoku);
-            sudokuPrinter.Print(result);
-
-            // Bảng Sudoku được biểu diễn bằng một mảng 2D
-            // 0 đại diện cho ô trống
-
-            // if (SolveSudoku(board))
-            // {
-            //     // In bảng Sudoku đã giải
-            //     PrintBoard(board);
-            // }
-            // else
-            // {
-            //     Console.WriteLine("Không có lời giải cho bài đố Sudoku này");
-            // }
         }
     }
 
