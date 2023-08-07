@@ -50,7 +50,9 @@ namespace SudokuSolver
                 var data = inputLoader.Load("Sudoku.txt");
                 var sudoku = sudokuParser.Parser(data);
                 var result = sudokuSolver.Solve(sudoku);
+              
                 Console.WriteLine("Input file: " + inputFile);
+                  sudokuPrinter.Print(result);
 
             }
             else
