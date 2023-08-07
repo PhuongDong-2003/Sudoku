@@ -1,8 +1,10 @@
+using SudokuSolver.Interface;
+
 namespace SudokuSolver
 {
-    public class SudokuParser
+    public class SudokuParser : ISudokuParser 
     {
-        internal Sudoku Parser(string[] data)
+        public Sudoku Parser(string[] data)
         {
              int[,] board = new int[9, 9];
 

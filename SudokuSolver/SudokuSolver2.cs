@@ -2,7 +2,7 @@ using SudokuSolver.Interface;
 
 namespace SudokuSolver
 {
-    public class SudokuSolver : ISudokuSolver
+    public class SudokuSolver2 : ISudokuSolver
     {
 
       

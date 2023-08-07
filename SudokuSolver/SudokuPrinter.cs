@@ -1,8 +1,10 @@
+using SudokuSolver.Interface;
+
 namespace SudokuSolver
 {
-    public class SudokuPrinter
+    public class SudokuPrinter : ISudokuPrinter
     {
-        internal void Print(Sudoku result)
+        public void Print(Sudoku result)
         {
         
             for (int i = 0; i < 9; i++)

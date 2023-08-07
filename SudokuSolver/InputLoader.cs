@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SudokuSolver.Interface;
 
 namespace SudokuSolver
 {
-    public class InputLoader
+    public class InputLoader : IInputLoader 
     {
-        internal string[] Load(string v)
+       public string[] Load(string v)
         {          
            return File.ReadAllLines(v);
             

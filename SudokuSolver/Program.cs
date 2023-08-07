@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualBasic;
+using SudokuSolver.Interface;
 
 namespace SudokuSolver
 {
@@ -24,7 +25,7 @@ namespace SudokuSolver
             InputLoader inputLoader = new InputLoader();
             SudokuParser sudokuParser = new SudokuParser();
             SudokuPrinter sudokuPrinter = new SudokuPrinter();
-            SudokuSolver sudokuSolver = new SudokuSolver();
+            ISudokuSolver sudokuSolver = new SudokuSolver2();
 
             //Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(args));
 
@@ -163,8 +164,7 @@ namespace SudokuSolver
         //         {
         //             Console.Write(board[i, j] + " ");
         //         }
-        //         Console.WriteLine();
-        //     }
+        //         Console.I
         // }
         // public static int[,] board = new int[,]
         //             {
