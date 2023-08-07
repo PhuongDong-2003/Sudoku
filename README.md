@@ -9,6 +9,7 @@ Path D:\FPT_Telecom\sudoku\SudokuSolver\ this is the directory to create the pro
 
 Run the CLI command: .\sudokuSolver.exe -i sudoku.txt and print out the results
 Input file: sudoku.txt
+
 5 3 4 6 7 8 9 1 2
 
 6 7 2 1 9 5 3 4 8
